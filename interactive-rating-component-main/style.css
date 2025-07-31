@@ -1,0 +1,102 @@
+:root {
+    --secondary-color: hsl(217, 12%, 63%);
+    --primary-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(216, 12%, 8%);
+    --bg2-color: hsl(213, 19%, 18%);
+    --orange-color: hsl(25, 97%, 53%);
+}
+body {
+    font-family: "Overpass", sans-serif;
+}
+section.ratings, section.message {
+    background-color: var(--bg-color);
+    width: 350px;  
+    padding: 20px;
+    margin: auto;
+    margin-top: 5vw;
+    color: hsl(0, 0%, 100%);
+    border-radius: 30px;
+}
+section.ratings img {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: var(--bg2-color);
+    padding: 20px;
+    border-radius: 30px;
+}
+section.ratings p {
+   color: var(--secondary-color);
+}
+div.inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+div.inputs input {
+    background-color: var(--bg2-color);
+    color: var(--primary-color);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+div.inputs input:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: hsl(213, 19%, 18%);
+}
+
+div.inputs :last-child:hover {
+    background-color: var(--orange-color);
+}
+
+button {
+    background-color: var(--orange-color);
+    border: none;
+    width: 100%;
+    height: 40px;
+    border-radius: 50px;
+    margin-top: 40px;
+    color: hsl(213, 19%, 18%);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+.message img {
+    display: block;
+    margin: 40px auto;
+}
+section.message {
+    display: none;
+}
+p.rate {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    height: 40px;
+    background-color: var(--bg2-color);
+    color: var(--orange-color);
+}
+p.thank {
+    font-size: 40px;
+    text-align: center;
+    margin: 20px auto;
+}
+p.appreciation {
+    text-align: center;
+    line-height: 30px;
+    color: var(--secondary-color);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin-top: 20px;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
