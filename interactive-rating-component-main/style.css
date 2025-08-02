@@ -10,7 +10,7 @@ body {
 }
 section.ratings, section.message {
     background-color: var(--bg-color);
-    width: 350px;  
+    width: 330px;  
     padding: 20px;
     margin: auto;
     margin-top: 5vw;
@@ -41,7 +41,7 @@ div.inputs input {
     border-radius: 50%;
 }
 
-div.inputs input:hover {
+div.inputs input:hover, div.inputs input:active {
     cursor: pointer;
     background-color: var(--primary-color);
     color: hsl(213, 19%, 18%);
