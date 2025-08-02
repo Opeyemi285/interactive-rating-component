@@ -1,54 +1,32 @@
 const number = document.getElementById("number");
-const one = document.getElementById("one");
-const two = document.getElementById("two");
-const three = document.getElementById("three");
-const four = document.getElementById("four");
-const five = document.getElementById("five");
-const submitBtn = document.getElementById("submit")
-const ratings = document.querySelector(".ratings")
-const message = document.querySelector(".message")
+const ratingButtons = document.querySelectorAll(".rating-btn");
+const submitBtn = document.getElementById("submit");
+const ratings = document.querySelector(".ratings");
+const message = document.querySelector(".message");
 
-one.addEventListener("click", function(){
-        number.innerHTML = "You selected 1 out of 5";
-        submitBtn.addEventListener("click", function() {
-        ratings.style.display = 'none'
-        message.style.display = 'block'
-    
-    })
-})
+let selectedRating = null;
 
-two.addEventListener("click", function(){
-        number.innerHTML = "You selected 2 out of 5";
-        submitBtn.addEventListener("click", function() {
-        ratings.style.display = 'none'
-        message.style.display = 'block'
-    
-    })
-})
+// Handle rating selection
+ratingButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    // Update the displayed text
+    selectedRating = button.value;
+    number.innerHTML = `You selected ${selectedRating} out of 5`;
 
-three.addEventListener("click", function(){
-        number.innerHTML = "You selected 3 out of 5";
-        submitBtn.addEventListener("click", function() {
-        ratings.style.display = 'none'
-        message.style.display = 'block'
-    
-    })
-})
+    // Optional: Add a class to the selected button for styling
+    ratingButtons.forEach(btn => btn.classList.remove("selected"));
+    button.classList.add("selected");
+  });
+});
 
-four.addEventListener("click", function(){
-        number.innerHTML = "You selected 4 out of 5";
-        submitBtn.addEventListener("click", function() {
-        ratings.style.display = 'none'
-        message.style.display = 'block'
-    
-    })
-})
-
-five.addEventListener("click", function(){
-        number.innerHTML = "You selected 5 out of 5";
-        submitBtn.addEventListener("click", function() {
-        ratings.style.display = 'none'
-        message.style.display = 'block'
-    
-    })
-})
+// Handle form submission
+submitBtn.addEventListener("click", () => {
+  // Only proceed if a rating has been selected
+  if (selectedRating) {
+    ratings.style.display = 'none';
+    message.style.display = 'block';
+  } else {
+    // Optional: Provide feedback if no rating is selected
+    alert("Please select a rating before submitting.");
+  }
+});
